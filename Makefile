@@ -4,15 +4,15 @@ CFLAGS := -Wall
 SRCFILES := $(wildcard src/*.cpp)
 
 all: $(SRCFILES:src/%.cpp=obj/%.o)
-	$(CC) $(CFLAGS) obj/*.o bin/saida 
+	$(CC) $(CFLAGS) obj/*.o bin/saida -lncurses
 
 obj/%.o : src/%.cpp
-	$(CC) $(CFLAGS) -c $< -o $@ -I./inc
+	$(CC) $(CFLAGS) -c $< -o $@ -I./inc -lncurses
 
 .PHONY: clean
 clean: 
 	rm -rf obj/*
 	rm -rf bin/*
 
-run: 
+run:
 	bin/saida
