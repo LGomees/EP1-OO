@@ -7,7 +7,7 @@ class Mapa {
 	    char distancia[20][50];
    public:
 	     Mapa();
-	     ~Mapa();
+	     
       void setDistancia();
       void getDistancia();
       void addElemento(char tecla, int posicaoX, int posicaoY);

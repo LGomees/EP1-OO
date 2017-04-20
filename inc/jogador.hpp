@@ -2,10 +2,10 @@
 #define JOGADOR_HPP
 
 #include "elementosJogo.hpp"
-#include "bonus.hpp"
-#include "inimigo.hpp"
 #include <iostream>
 #include <string>
+
+using namespace std;
 
 class Jogador : public ElementosJogo {
 
@@ -17,16 +17,16 @@ class Jogador : public ElementosJogo {
    public:
 	Jogador();
 	~Jogador();
-	Jogador(bool vivo, int pontos, bool ganhar);
-	~Jogador(bool vivo, int pontos, bool ganhar);
+	Jogador(char tecla, int posicaoX, int posicaoY);
+
+  void movimento();
+
 	bool getVivo();
 	void setVivo(bool vivo);
 	bool getGanhar();
 	void setGanhar(bool ganhar);
 	int getPontos();
 	void setPontos(int pontos);
-  void movimento();
-  char getTecla();
 
 
 };

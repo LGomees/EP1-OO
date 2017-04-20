@@ -1,35 +1,38 @@
 #include "jogador.hpp"
-#include "ElementosJogo.hpp"
+#include "elementosJogo.hpp"
+#include <stdio.h>
+#include <ncurses.h>
+#include "mapa.hpp"
+#include <iostream>
+
+using namespace std;
 
 Jogador::Jogador(){}
 
 Jogador::Jogador(char tecla, int posicaoX, int posicaoY){
-  this->tecla = tecla;
-  this->posicaoX = posicaoX;
-  this->posicaoY = posicaoY;
+  setTecla(tecla);
+  setPosicaoX(posicaoX);
+  setPosicaoY(posicaoY);
 }
 
-void Jogador::setPosicaoX(int valor){
 
-	this->posicaoX += valor;
-}
+void Jogador::movimento(){
 
-void Jogador::setPosicaoY(int valor){
-	this->posicaoY += valor;
-}
+        char direcao;
 
-void Jogador::setTecla(char tecla){
-  this->tecla = tecla;
-}
+        direcao = getch();
 
-int Jogador::getPosicaoX(){
-	return this->posicaoX;
-}
+        if(direcao == 'w'){
+                this->setPosicaoY(this->getPosicaoY()-1);
+        }
+        else if (direcao == 's'){
+                this->setPosicaoY(this->getPosicaoY()+1);
+        }
+        else if (direcao == 'a'){
+                this->setPosicaoX(this->getPosicaoX()-1);
+        }
+        else if (direcao == 'd'){
+                this->setPosicaoX(this->getPosicaoX()+1);
+        }
 
-int Jogador::getPosicaoY(){
-	return this->posicaoY;
-}
-
-int Jogador::getTecla(){
-  return this->tecla;
 }

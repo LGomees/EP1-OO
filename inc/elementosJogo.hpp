@@ -3,22 +3,22 @@
 
 using namespace std;
 
-
 class ElementosJogo {
 
-   private:
+private:
 	int posicaoX;
 	int posicaoY;
 	char tecla;
 
-   public:
-	int getPosicaoX();
+    public:
+  ElementosJogo();
+  int getPosicaoX();
 	void setPosicaoX(int posicaoX);
 	int getPosicaoY();
 	void setPosicaoY(int posicaoY);
 	char getTecla();
 	void setTecla(char tecla);
-
+  
 };
 
 #endif
