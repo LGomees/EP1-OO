@@ -30,15 +30,22 @@ int main() {
         keypad(stdscr, TRUE);
         noecho();
 
-        if (mapa->pode_mover(jogador)) {
-            mapa->addElemento(jogador);
-        } else {
-            jogador->voltar_movimento();
-        }
+				if (mapa->pode_mover(jogador)) {
+					mapa->addElemento(jogador);
+				}	else {
+					jogador->voltar_movimento();
+				}
+
+
         mapa->getDistancia();
 
 
         jogador->movimento();
+
+				if(mapa->ganhou(jogador)) {
+							printw("VOCE GANHOU!");
+							break;
+					}
 
 
         refresh();

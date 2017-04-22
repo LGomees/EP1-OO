@@ -4,6 +4,7 @@
 #include "elementosJogo.hpp"
 #include <iostream>
 #include <string>
+#include "bonus.hpp"
 
 using namespace std;
 
@@ -12,8 +13,9 @@ class Jogador : public ElementosJogo {
    private:
 	bool vivo;
 	bool ganhar;
-	int pontos;
-  int ultimoX;
+  int vida;
+  int pontos;
+	int ultimoX;
   int ultimoY;
 
    public:
@@ -29,6 +31,9 @@ class Jogador : public ElementosJogo {
 	void setGanhar(bool ganhar);
 	int getPontos();
 	void setPontos(int pontos);
+  int getVida();
+  void setVida(int valor);
+
 
   void voltar_movimento();
 

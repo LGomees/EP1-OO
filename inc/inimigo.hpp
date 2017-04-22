@@ -12,7 +12,7 @@ class Inimigo : public ElementosJogo {
 	Inimigo();
 	~Inimigo();
 	int getDano();
-	void setDano(int dano);
+	void setDano(int valor);
 };
 
 #endif

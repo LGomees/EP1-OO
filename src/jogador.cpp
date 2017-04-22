@@ -4,10 +4,10 @@
 #include <ncurses.h>
 #include "mapa.hpp"
 #include <iostream>
+#include "bonus.hpp"
 
 using namespace std;
 
-Jogador::Jogador(){}
 
 Jogador::Jogador(char tecla, int posicaoX, int posicaoY){
   setTecla(tecla);
@@ -35,4 +35,26 @@ void Jogador::movimento() {
 void Jogador::voltar_movimento() {
     this->setPosicaoX(this->ultimoX);
     this->setPosicaoY(this->ultimoY);
+}
+
+Jogador::Jogador()
+    : ElementosJogo() {
+    this->vida = 1;
+    this->pontos = 0;
+}
+
+int Jogador::getPontos() {
+    return this->pontos;
+}
+
+void Jogador::setPontos(int valor) {
+    this->pontos = valor;
+}
+
+int Jogador::getVida() {
+    return this->vida;
+}
+
+void Jogador::setVida(int valor) {
+    this->vida = valor;
 }

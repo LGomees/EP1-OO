@@ -17,6 +17,7 @@ public:
     void addElemento(ElementosJogo *elemento);
 
     bool pode_mover(ElementosJogo *elemento);
+    bool ganhou(ElementosJogo *jogador);
 };
 
 #endif

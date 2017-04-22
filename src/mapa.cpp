@@ -59,3 +59,7 @@ bool Mapa::pode_mover(ElementosJogo *elemento) {
     }
     return flag;
 }
+
+bool Mapa::ganhou(ElementosJogo *jogador) {
+    return this->distancia[jogador->getPosicaoY()][jogador->getPosicaoX()] == '8';
+}

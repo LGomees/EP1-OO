@@ -9,9 +9,8 @@ class Bonus : public ElementosJogo {
 	int pontos;
 
    public:
-	Pontos();
 	int getPontos();
-	void setPontos(int pontos);
+	void setPontos(int valor);
 
 };
 
