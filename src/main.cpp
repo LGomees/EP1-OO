@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <stdlib.h>
+#include <cstdlib>
 #include <unistd.h>
 #include <ncurses.h>
 #include <stdio_ext.h>
@@ -9,35 +9,41 @@
 #include "jogador.hpp"
 #include "elementosJogo.hpp"
 
+
 using namespace std;
 
 
-int main(){
+int main() {
 
-	Mapa* mapa = new Mapa();
-	mapa->setDistancia();
-
-	Jogador* jogador = new Jogador('@', 2, 2);
+    Mapa *mapa = new Mapa();
+    mapa->setDistancia();
 
 
-	char a = 'a';
+    Jogador *jogador = new Jogador('@', 2, 2);
 
-	while(TRUE){
-		initscr();
-		clear();
-		keypad(stdscr, TRUE);
-		noecho();
+    char a = 'a';
 
-		mapa->addElemento(jogador->getTecla(), jogador->getPosicaoX(), jogador->getPosicaoX());
-		mapa->getDistancia();
+    while (TRUE) {
+
+        initscr();
+        clear();
+        keypad(stdscr, TRUE);
+        noecho();
+
+        if (mapa->pode_mover(jogador)) {
+            mapa->addElemento(jogador);
+        } else {
+            jogador->voltar_movimento();
+        }
+        mapa->getDistancia();
 
 
-		jogador->movimento();
+        jogador->movimento();
 
 
-		refresh();
-		endwin();
-	}
+        refresh();
+        endwin();
+    }
 
-	return 0;
+    return 0;
 }

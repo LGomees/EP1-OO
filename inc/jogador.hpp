@@ -13,10 +13,12 @@ class Jogador : public ElementosJogo {
 	bool vivo;
 	bool ganhar;
 	int pontos;
+  int ultimoX;
+  int ultimoY;
 
    public:
 	Jogador();
-	~Jogador();
+  ~Jogador();
 	Jogador(char tecla, int posicaoX, int posicaoY);
 
   void movimento();
@@ -28,6 +30,7 @@ class Jogador : public ElementosJogo {
 	int getPontos();
 	void setPontos(int pontos);
 
+  void voltar_movimento();
 
 };
 

@@ -9,16 +9,17 @@ private:
 	int posicaoX;
 	int posicaoY;
 	char tecla;
+  
 
     public:
   ElementosJogo();
   int getPosicaoX();
-	void setPosicaoX(int posicaoX);
+	void setPosicaoX(int valorX);
 	int getPosicaoY();
-	void setPosicaoY(int posicaoY);
+	void setPosicaoY(int valorY);
 	char getTecla();
 	void setTecla(char tecla);
-  
+
 };
 
 #endif

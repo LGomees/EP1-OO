@@ -4,13 +4,19 @@
 
 using namespace std;
 
-void ElementosJogo::setPosicaoX(int posicaoX){
-
-  this->posicaoX += posicaoX;
+ElementosJogo::ElementosJogo(){
+  this->posicaoX = 0;
+  this->posicaoY = 0;
+  this->tecla = '\0';
 }
 
-void ElementosJogo::setPosicaoY(int posicaoY){
-  this->posicaoY += posicaoY;
+void ElementosJogo::setPosicaoX(int valorX){
+
+  this->posicaoX = valorX;
+}
+
+void ElementosJogo::setPosicaoY(int valorY){
+  this->posicaoY = valorY;
 }
 
 void ElementosJogo::setTecla(char tecla){
